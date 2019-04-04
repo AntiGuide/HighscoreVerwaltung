@@ -6,29 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository {
-    class HighscoreInitializer : DropCreateDatabaseAlways<HighscoreContext>{
+    class HighscoreInitializer : DropCreateDatabaseAlways<HighscoreContext> {
         protected override void Seed(HighscoreContext ctx) {
             base.Seed(ctx);
 
-            var u1 = new User { Name = "Lukas" };
-            var u2 = new User { Name = "Janik" };
-            var u3 = new User { Name = "Almin" };
+            User[] users = { new User { Name = "Lukas" },
+                             new User { Name = "Janik" },
+                             new User { Name = "Almin" }};
+            ctx.Users.AddRange(users);
 
-            var game = new Game { Name = "CS:GO" };
 
-            var s1 = new Score { Points = 100, Game = game, User = u1 };
-            var s2 = new Score { Points = 200, Game = game, User = u2 };
-            var s3 = new Score { Points = 300, Game = game, User = u3 };
+            Game[] games = { new Game { Name = "CS:GO" } };
+            ctx.Games.AddRange(games);
 
-            ctx.Users.Add(u1);
-            ctx.Users.Add(u2);
-            ctx.Users.Add(u3);
-
-            ctx.Games.Add(game);
-
-            ctx.Scores.Add(s1);
-            ctx.Scores.Add(s2);
-            ctx.Scores.Add(s3);
+            Score[] scores = { new Score { Points = 100, Game = games[0], User = users[1] }, 
+                               new Score { Points = 200, Game = games[0], User = users[2] },
+                               new Score { Points = 300, Game = games[0], User = users[3] }};
+            ctx.Scores.AddRange(scores);
 
             ctx.SaveChanges();
         }
