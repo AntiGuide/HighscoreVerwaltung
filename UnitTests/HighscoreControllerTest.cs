@@ -14,5 +14,14 @@ namespace UnitTests {
             Assert.IsTrue(highscoreController.GetUsers().Any(u => u.Name == "Tester"));
             Assert.AreEqual(user, highscoreController.GetUsers().First(u => u.Name == "Tester"));
         }
+
+        [TestMethod]
+        public void CreateGame_NonExistent() {
+            var highscoreController = new HighscoreController();
+            Assert.IsFalse(highscoreController.GetGames().Any(u => u.Name == "TestGame"));
+            var game = highscoreController.CreateGame("TestGame");
+            Assert.IsTrue(highscoreController.GetGames().Any(u => u.Name == "TestGame"));
+            Assert.AreEqual(game, highscoreController.GetGames().First(u => u.Name == "TestGame"));
+        }
     }
 }

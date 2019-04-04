@@ -36,7 +36,14 @@ namespace Repository {
             return score;
         }
 
-        public IEnumerable<GameInfo> GetGames() {
+        public IEnumerable<Game> GetGames() {
+            using (var ctx = new HighscoreContext()) {
+                //return ctx.Games.Select(game => new GameInfo() { Game = game, Points = game.Scores.Max(s => s.Points) }).ToList();
+                return ctx.Games.ToList();
+            }
+        }
+
+        public IEnumerable<GameInfo> GetGamesWithHighscore() {
             using (var ctx = new HighscoreContext()) {
                 return ctx.Games.Select(game => new GameInfo() { Game = game, Points = game.Scores.Max(s => s.Points) }).ToList();
             }
