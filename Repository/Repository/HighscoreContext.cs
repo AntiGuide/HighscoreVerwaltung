@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace Repository {
     class HighscoreContext : DbContext{
-        public HighscoreContext() : base() { }
+        static HighscoreContext() {
+            Database.SetInitializer<HighscoreContext>(new HighscoreInitializer());
+        }
 
         public DbSet<Game> Games { get; set; }
         public DbSet<User> Users { get; set; }
