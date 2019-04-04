@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository {
-    class Game {
+    public class Game {
         public int Id { get; set; }
         [Required] public string Name { get; set; }
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository {
-    class Score {
+    public class Score {
         public int Id { get; set; }
         public int Points { get; set; }
 

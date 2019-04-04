@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository {
-    class HighscoreController {
+    public class HighscoreController {
         public User CreateUser(string name) {
             var user = new User { Name = name };
             using (var ctx = new HighscoreContext()) {
