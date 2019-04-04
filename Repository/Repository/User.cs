@@ -11,5 +11,14 @@ namespace Repository {
         [Required] public string Name { get; set; }
 
         public ICollection<Score> Scores { get; set; }
+
+        public override bool Equals(object obj) {
+            User other = obj as User;
+            if (other == null) {
+                return false;
+            } else {
+                return Id == other.Id && Name == other.Name;
+            }
+        }
     }
 }
