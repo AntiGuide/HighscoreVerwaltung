@@ -19,9 +19,9 @@ namespace Repository {
             Game[] games = { new Game { Name = "CS:GO" } };
             ctx.Games.AddRange(games);
 
-            Score[] scores = { new Score { Points = 100, Game = games[0], User = users[1] }, 
-                               new Score { Points = 200, Game = games[0], User = users[2] },
-                               new Score { Points = 300, Game = games[0], User = users[3] }};
+            Score[] scores = { new Score { Points = 100, Game = games[0], User = users[0] }, 
+                               new Score { Points = 200, Game = games[0], User = users[1] },
+                               new Score { Points = 300, Game = games[0], User = users[2] }};
             ctx.Scores.AddRange(scores);
 
             ctx.SaveChanges();
