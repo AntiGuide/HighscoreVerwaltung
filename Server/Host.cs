@@ -11,14 +11,14 @@ namespace Server {
     class Host<T> : IDisposable where T : ISessionScope, new() {
         ServiceHost serviceHost = new ServiceHost(typeof(HighscoreService<T>));
 
-        void Start() {
+        public void Start() {
             Uri baseAddress = new Uri("net.tcp://localhost:8009/Highscore");
             NetTcpBinding binding = new NetTcpBinding();
             serviceHost.AddServiceEndpoint(typeof(IHighscoreService), binding, baseAddress);
             serviceHost.Open();
         }
 
-        void Close() {
+        public void Close() {
             serviceHost.Close();
         }
 

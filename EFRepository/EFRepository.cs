@@ -14,7 +14,9 @@ namespace EFRepository {
         }
 
         public TEntity Create(TEntity entity) {
-            return ctx.Set<TEntity>().Add(entity);
+            var ret = ctx.Set<TEntity>().Add(entity);
+            ctx.SaveChanges();
+            return ret;
         }
 
         public IEnumerable<TEntity> GetAll() {

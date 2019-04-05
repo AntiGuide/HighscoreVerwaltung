@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFRepository", "..\EFReposi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{56918C99-2D83-46E4-9CDA-EA41BB57A564}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client.csproj", "{EE08CFDD-D710-4E8B-B805-ED140D1E1D9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{56918C99-2D83-46E4-9CDA-EA41BB57A564}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56918C99-2D83-46E4-9CDA-EA41BB57A564}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56918C99-2D83-46E4-9CDA-EA41BB57A564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE08CFDD-D710-4E8B-B805-ED140D1E1D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE08CFDD-D710-4E8B-B805-ED140D1E1D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE08CFDD-D710-4E8B-B805-ED140D1E1D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE08CFDD-D710-4E8B-B805-ED140D1E1D9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
