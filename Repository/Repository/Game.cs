@@ -13,12 +13,19 @@ namespace Repository {
         public ICollection<Score> Scores { get; set; }
 
         public override bool Equals(object obj) {
-            Game other = obj as Game;
-            if (other == null) {
-                return false;
-            } else {
-                return Id == other.Id && Name == other.Name && Scores == other.Scores;
+            if (obj is Game) {
+                Game other = obj as Game;
+                return Id == other.Id && Name == other.Name;
             }
+
+            return false;
+        }
+
+        public override int GetHashCode() {
+            int hash = 23;
+            hash = ((hash << 5) * 37) ^ Id.GetHashCode();
+            hash = ((hash << 5) * 37) ^ (Name == null ? 0 : Name.GetHashCode());
+            return hash;
         }
     }
 }

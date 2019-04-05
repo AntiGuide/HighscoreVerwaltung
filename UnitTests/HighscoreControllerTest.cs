@@ -2,13 +2,14 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Server;
+using EFRepository;
 
 namespace UnitTests {
     [TestClass]
     public class HighscoreControllerTest {
         [TestMethod]
         public void CreateUser_NonExistent() {
-            var highscoreController = new HighscoreController();
+            var highscoreController = new HighscoreController(() => new EFSessionScope());
             Assert.IsFalse(highscoreController.GetUsers().Any(u => u.Name == "Tester"));
             var user = highscoreController.CreateUser("Tester");
             Assert.IsTrue(highscoreController.GetUsers().Any(u => u.Name == "Tester"));
@@ -17,7 +18,7 @@ namespace UnitTests {
 
         [TestMethod]
         public void CreateGame_NonExistent() {
-            var highscoreController = new HighscoreController();
+            var highscoreController = new HighscoreController(() => new EFSessionScope());
             Assert.IsFalse(highscoreController.GetGames().Any(u => u.Name == "TestGame"));
             var game = highscoreController.CreateGame("TestGame");
             Assert.IsTrue(highscoreController.GetGames().Any(u => u.Name == "TestGame"));

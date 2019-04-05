@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository {
-    public class User {
+namespace Common {
+    public class DTO_User {
         public int Id { get; set; }
-        [Required] public string Name { get; set; }
-
-        public ICollection<Score> Scores { get; set; }
+        public string Name { get; set; }
 
         public override bool Equals(object obj) {
-            if (obj is User) {
-                User other = obj as User;
+            if (obj is DTO_User) {
+                DTO_User other = obj as DTO_User;
                 return Id == other.Id && Name == other.Name;
             }
 
