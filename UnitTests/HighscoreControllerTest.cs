@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Repository;
+using Server;
 
 namespace UnitTests {
     [TestClass]
