@@ -53,6 +53,7 @@
     <Compile Include="EFGameRepository.cs" />
     <Compile Include="EFRepository.cs" />
     <Compile Include="EFScoreRepository.cs" />
+    <Compile Include="EFSessionScope.cs" />
     <Compile Include="EFUserRepository.cs" />
     <Compile Include="HighscoreContext.cs" />
     <Compile Include="HighscoreInitializer.cs" />
